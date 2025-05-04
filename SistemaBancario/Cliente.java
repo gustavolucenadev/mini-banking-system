@@ -2,26 +2,23 @@ package SistemaBancario;
 
 public class Cliente {
     private String nome;
-    private String CPF;
-    private Double saldo;
+    private Conta conta;
 
-    public Cliente(){}
-
-    public Cliente(String nome, String CPF, Double saldo) {
+    public Cliente(String nome, int numeroConta) {
         this.nome = nome;
-        this.CPF = CPF;
-        this.saldo = saldo;
+        this.conta = new Conta(numeroConta);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getCPF() {
-        return CPF;
+    public Conta getConta() {
+        return conta;
     }
 
-    public Double getSaldo() {
-        return saldo;
+    public void exibirInfo() {
+        System.out.println("Cliente: " + nome);
+        conta.exibirSaldo();
     }
 }
